@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>TCP Port Scanner with Owner Information Retrieval</title>
+  </head>
+  <body>
+    <h1>Script Description - TCP Port Scanner with Owner Information Retrieval using lua </h1>
+    <p>Description: The script attempts to find the IP address and owner of an open TCP port, as well as the host status, other addresses, port status, and service on the target system. </p>
+    <h2>Usage:</h2>
+    <p>1. Install Nmap on your system.</p>
+    <p>2. Open a terminal or command prompt and navigate to the directory where the script is located.</p>
+    <p>3. Run the following command to scan a target system :</p>
+    <pre>nmap --script &lt;script-name&gt; &lt;target&gt;</pre>
+    <p>4. Replace &lt;script-name&gt; with the name of the script file (e.g. "vengat.nse") and &lt;target&gt; with the IP address or hostname of the target system.</p>
+    <p>5. The script will scan for open TCP ports on the target system and query the identd daemon on port 113 to determine the owner of each open port. If DNS scanning is enabled, it will also perform reverse DNS lookups on each IP address found to retrieve the corresponding hostnames.</p>
+    <h2>Sample Output:</h2>
+    <pre>
+    Starting Nmap 7.91 ( https://nmap.org ) at 2023-04-30 10:00 EDT
+    Nmap scan report for example.com (192.0.2.1)
+    Host is up (0.50s latency).
+    Not shown: 998 closed ports
+    PORT    STATE SERVICE  OWNER    HOSTNAME
+   22/tcp  open  ssh      root     server.example.com
+   53/tcp  open  domain           ns1.example.com
+   80/tcp  open  http             www.example.com
+ Nmap done: 1 IP address (1 host up) scanned in 1.23 seconds
+</pre>
+  </body>
+</html>
